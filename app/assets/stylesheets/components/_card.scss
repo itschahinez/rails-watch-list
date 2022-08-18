@@ -1,0 +1,20 @@
+$padding: 30px;
+$margin: 20px;
+$border-radius: 20px;
+
+.card {
+  padding: $padding;
+  margin: $margin;
+  border-radius: $border-radius;
+  border-color: mediumaquamarine;
+  width: 200px;
+  height: 200px;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card a {
+  text-decoration: none;
+  font-weight: bold;
+}

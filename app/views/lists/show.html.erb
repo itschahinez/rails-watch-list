@@ -1,0 +1,28 @@
+<h1> <%= @list.name %></h1>
+
+<div class="row d-flex">
+    <% @list.bookmarks.each do |bookmark| %>
+    <div class="bookmark-card card col-6 p-3">
+      <li>
+        <%= bookmark.movie.title %>
+        <%= bookmark.movie.overview %>
+        <%= bookmark.movie.rating %>
+        <%= bookmark.comment %>
+
+        <%= link_to "X", bookmark_path(bookmark), data: {turbo_method: :delete} %>
+        <% end %>
+      </li>
+    </div>
+  </div>
+
+<div class="review-new py-3">
+    <div class="form">
+        <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.association :movie %>
+          <%= f.input :comment %>
+          <%= f.submit class: "btn btn-primary"%>
+        <% end %>
+    </div>
+  </div>
+
+<%= link_to "Back to all lists", lists_path %>

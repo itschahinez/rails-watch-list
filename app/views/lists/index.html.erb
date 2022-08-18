@@ -1,0 +1,25 @@
+<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1572188863110-46d457c9234d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+  <div class="container">
+    <h1>What are you watching next?</h1>
+  </div>
+</div>
+
+<div class="container">
+  <ul class="cards">
+    <% @lists.each do |genre| %>
+    <li class="card"><%= link_to genre.name, list_path(genre) %></li>
+    <% end %>
+  </ul>
+
+  <h2>Enter a list</h2>
+
+  <div class="review-new py-3">
+      <div class="form">
+          <%= simple_form_for [@list] do |f| %>
+            <%= f.input :name %>
+            <%= f.submit class: "btn btn-primary"%>
+          <% end %>
+      </div>
+    </div>
+
+</div>
